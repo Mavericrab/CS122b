@@ -19,6 +19,7 @@ public class insertNewStar {
     	   first_name="";
        }
        // prepare SQL statement template that's to be repeatedly excuted
+        try{
        String updateString = "INSERT INTO stars (first_name, last_name, dob) VALUES (?,?,?)";
        PreparedStatement updateStars = connection.prepareStatement(updateString);
 
@@ -28,6 +29,11 @@ public class insertNewStar {
                updateStars.setString(3, dob);
                
                updateStars.executeUpdate();
-           }
-	}
-
+       }
+       catch(SQLException e){
+   		System.out.println("added failed");
+   		return;
+   	}
+     }
+	
+}
