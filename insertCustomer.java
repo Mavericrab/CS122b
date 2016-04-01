@@ -33,6 +33,9 @@ public class insertCustomer {
 	   last_name=first_name;
 	   first_name="";
    }
+   if(first_name==null){
+   	first_name="";
+   }
    // prepare SQL statement template that's to be repeatedly excuted
    String updateString = "INSERT INTO customers (first_name, last_name, cc_id, address, email, password) VALUES(?,?,?,?,?,?)";
    PreparedStatement updateCustomers = connection.prepareStatement(updateString);
