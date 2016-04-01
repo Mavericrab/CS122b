@@ -18,6 +18,9 @@ public class insertNewStar {
     	   last_name=first_name;
     	   first_name="";
        }
+       if(first_name==null){
+       	first_name="";
+       }
        // prepare SQL statement template that's to be repeatedly excuted
         try{
        String updateString = "INSERT INTO stars (first_name, last_name, dob) VALUES (?,?,?)";
