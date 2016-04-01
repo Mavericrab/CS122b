@@ -19,7 +19,7 @@ public class insertCustomer {
    ResultSet results = updatecredit.executeQuery();
 	results.next();
 	
-	if (results.getInt(1) < 0) return;
+	if (results.getInt(1) == 0) return;
 	
 	}
    catch (SQLException e)
