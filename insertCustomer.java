@@ -13,7 +13,7 @@ public class insertCustomer {
    
    //if his credit card does not exist in the credit card table
    try{
-   String checkcredit="SELECT * FROM creditcards WHERE id=?";
+   String checkcredit="SELECT COUNT(*) FROM creditcards WHERE id=?";
    PreparedStatement updatecredit = connection.prepareStatement(checkcredit);
    updatecredit.setString(1, cc_id);
    ResultSet results = updatecredit.executeQuery();
@@ -50,5 +50,6 @@ public class insertCustomer {
 
            
            updateCustomers.executeUpdate();
+           System.out.println("add succeeded");
        }
 }
